@@ -1,8 +1,25 @@
 ---
-title: Welcome
 publish: true
+title: index
+description: 通用技术知识库
+created: 2026-11-01
+modified: 2026-11-02T04:48:15.192Z
 ---
 
-Welcome to your Quartz site! This is your home page.
+# Tech Vault
 
-Edit this note in Obsidian, then publish it with Quartz Syncer.
+通用技术，技术方案与踩坑记录。
+
+## 主要内容
+
+- **0.AI相关**：大模型应用、提示词、AI 工具链
+- **1.大数据**：数仓、计算引擎、数据平台组件
+- **2.数据预测**：预测建模、算法与指标方法
+- **5.后端开发**：服务端技术方案与中间件
+- **7.前端开发**：页面、组件、前端工程化
+- **9.运维部署**：服务器、部署、监控与故障处理
+- **copilot**：AI 辅助编程实践
+
+## 说明
+
+与 Dev Vault 的分工：**能落到具体代码/工程实践**的放 Dev Vault，**方案选型、设备、环境、工具使用**类的放本库。
