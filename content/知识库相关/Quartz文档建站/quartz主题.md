@@ -96,6 +96,7 @@ plugins:
 ```
 npm install @quartz-themes/core @quartz-themes/emerald
 ```
+
 quartz.config.yaml 配置：
 ```
 plugins:
@@ -105,6 +106,7 @@ plugins:
       variation: "latte" # mocha深色，latte浅色
       mode: "both"xx
 ```
+
 # ✅ 专门移植自 Obsidian 的 Quartz 主题（quartz-themes 仓库，v5 可用）
 
 预览总站：[https://quartz-themes.github.io/](https://quartz-themes.github.io/) 里面大量主题都是 Obsidian 社区热门主题直接移植到 Quartz 的，**callout、排版、代码块、配色和你 Obsidian 里面一模一样**
@@ -121,6 +123,7 @@ plugins:
 ```
 npm install @quartz-themes/core @quartz-themes/obuntu
 ```
+
 quartz.config.yaml 配置：
 ```
 plugins:
@@ -144,6 +147,7 @@ Obsidian Minimal 移植版，干净紧凑、侧边栏简约，适合 tech-vault�
 ```
 npm install @quartz-themes/core @quartz-themes/its-theme
 ```
+
 quartz.config.yaml 配置：
 ```
 plugins:

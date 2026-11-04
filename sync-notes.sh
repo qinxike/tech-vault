@@ -4,6 +4,7 @@
 SRC="/Users/qinxike/works/knowledge-vault/tech-vault"
 DEST="./content"
 rsync -av --delete \
+	--exclude "_templater/" \
 	--exclude ".git/" \
 	--exclude ".obsidian/" \
   --exclude ".trash/" \
