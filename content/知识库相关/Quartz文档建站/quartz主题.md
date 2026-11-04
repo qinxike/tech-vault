@@ -1,9 +1,51 @@
+---
+title: quartz主题
+description: ""
+tags: []
+created: 2026-11-04
+modified: 2026-11-04
+draft: false
+publish: true
+---
+
 # ✅ Quartz 第三方主题站点 + 推荐模板（适配 Quartz 5)
 
-## 🔗 主题预览网站（优先看这个）
+## 🔗 主题预览网站（优先看这个）https://quartz-themes.github.io/
+
 - 仓库地址：[https://github.com/saberzero1/quartz-themes](https://github.com/saberzero1/quartz-themes)
 - 每个主题都有在线预览页，点进去直接看效果，附带安装命令
 > 这是 saberzero1 维护的社区主题合集，是目前 Quartz 生态最成熟的主题仓库，全部是从 Obsidian 热门主题移植过来，支持明暗双模式，开箱即用，和 Quartz Syncer 完美兼容
+## [Installation](https://github.com/saberzero1/quartz-themes/tree/master#installation)
+
+### [npm package (Recommended)](https://github.com/saberzero1/quartz-themes/tree/master#npm-package-recommended)
+
+安装主题核心插件和你选择的主题插件:
+```shell
+npm install @quartz-themes/core @quartz-themes/<THEME-NAME>
+```
+
+修改配置文件主题相关部分`quartz.config.yaml`:
+```yaml
+plugins:
+  - source: "@quartz-themes/core"
+    options:
+      theme: "<THEME-NAME>"
+      mode: "both"
+```
+
+> [!Tip]
+> Example for Tokyo Night:
+> ```shell
+> npm install @quartz-themes/core @quartz-themes/tokyo-night
+> ```
+> ```yaml
+> plugins:
+>  - source: "@quartz-themes/core"
+>   options:
+>      theme: "tokyo-night"
+>      mode: "both"
+>```
+
 ## 🎨 推荐给你的几套风格模板（按你的知识库场景挑选）
 
 > 你的知识库：knowledge-vault，分 tech /life/hobby /biz，偏技术笔记、文档、数字花园，优先选阅读舒服、callout 好看、代码块美观的
@@ -35,7 +77,6 @@ plugins:
 >  fontOrigin: "local"
 >  ```
 
-```
 ### 2. Tokyo Night（程序员深色经典，干净利落）
 
 预览：[https://quartz-themes.github.io/tokyo-night](https://quartz-themes.github.io/tokyo-night) 特点：日系深蓝深色主题，浅色模式清爽，代码高亮辨识度高，适合 tech-vault 技术笔记，极简不花哨

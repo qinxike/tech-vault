@@ -1,8 +1,8 @@
 ---
-publish: true
 title: deepseek hardness相关
 created: 2026-10-23
 modified: 2026-11-02T04:56:31.066Z
+publish: true
 ---
 
 你说现在vscode和Obsidian两个宿主都共享同一份dsh是吗？这份dsh装在npm里，配置在～/.dsh目录是吗？那么桌面版的deepseek harness，用的是另外一份dsh吗？他的配置文件又在哪里？这两个是不是互相独立的？

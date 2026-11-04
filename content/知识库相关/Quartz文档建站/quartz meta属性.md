@@ -1,8 +1,8 @@
 ---
-publish: true
 title: quartz meta属性
 created: 2026-11-02
 modified: 2026-11-02T17:16:44.301Z
+publish: true
 ---
 
 ## Frontmatter（文件头元信息）自动机制
@@ -53,11 +53,30 @@ publish: true
 ```
 Obsidian库（原始md，日常写笔记）
     ↓
-映射content目录
+  1.映射content目录(可选)
     ↓
-windows: mklink /J 把【待发布子文件夹】映射到 quartz/content
-mac: ln -s 把【待发布子文件夹】映射到 quartz/content
+    windows: mklink /J 把【待发布子文件夹】映射到 quartz/content
+    mac: ln -s 把【待发布子文件夹】映射到 quartz/content
+  2.rsync脚本复制笔记到content目录
 
+切换到quartz项目根目录:
+修改主题:
+    1. 安装主题: 
+        安装emerald主题: npm install @quartz-themes/core @quartz-themes/emerald
+    2. 修改配置使用主题: vi quartz.config.yaml
+      - source: "@quartz-themes/core"
+        enabled: true
+        options:
+          theme: "emerald"
+          variation: "latte" # mocha深色，latte浅色
+          fontOrigin: "local"
+          mode: both
 Quartz构建:
-npx quartz build --serve
+    npx quartz build --serve
+
+git推送
+    git add .
+    git copmmit -am "xxx"
+    git push
+    
 ```

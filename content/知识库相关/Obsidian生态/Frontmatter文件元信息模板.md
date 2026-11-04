@@ -1,8 +1,8 @@
 ---
-publish: true
 title: Frontmatter文件元信息模板
 created: 2026-11-02
 modified: 2026-11-02T17:29:31.713Z
+publish: true
 ---
 
 # 文件元信息模板 Frontmatter Templater
