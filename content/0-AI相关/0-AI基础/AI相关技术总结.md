@@ -1,8 +1,11 @@
 ---
-publish: true
 title: AI相关技术总结
+description:
+tags:
 created: 2026-10-20
-modified: 2026-11-02T04:56:14.365Z
+modified: 2026-11-04
+draft: false
+publish: true
 ---
 
 # AI相关技术

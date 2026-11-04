@@ -4,7 +4,6 @@
 SRC="/Users/qinxike/works/knowledge-vault/tech-vault"
 DEST="./content"
 rsync -av --delete \
-  --iconv=UTF8-MAC,UTF-8 \
 	--exclude ".git/" \
 	--exclude ".obsidian/" \
   --exclude ".trash/" \
@@ -12,4 +11,6 @@ rsync -av --delete \
 	--exclude ".*/" \
   --exclude ".[^/]*" \
   $SRC/ $DEST/
+
+# 新版rsync才支持mac中文名文件,参数: --iconv=UTF8-MAC,UTF-8 \
 

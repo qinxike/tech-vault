@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Quartz 5
+  pageTitle: 通用技术文档
   enableSPA: true
   enablePopovers: true
   analytics:
@@ -100,9 +100,11 @@ plugins:
   - source: "@quartz-community/quartz-fonts"
     enabled: true
   - source: "@quartz-themes/core"
-    enabled: false
+    enabled: true
     options:
-      theme: tokyo-night
+      theme: "emerald"
+      variation: "latte" # mocha深色，latte浅色
+      fontOrigin: "local"
       mode: both
   - source: "@quartz-community/remove-draft"
     enabled: true
