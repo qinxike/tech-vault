@@ -17,14 +17,16 @@ modified: 2026-11-02T17:16:44.301Z
   - `title`：自动拿文件名当页面标题
   - `description`：没有，SEO 预览就空
   - `tags`：无
-  - `draft`：默认 `false`（直接发布）
+  - `draft`：默认 `false`（非草稿可发布）
     👉 **这个是「读取时自动生成页面元数据」，不是写到 md 文件头部，你的源文件干干净净，零侵入！**
     也就是说：**你完全可以一篇 frontmatter 都不写，直接 build 跑站**，只是缺少描述、自定义标签、草稿控制这些能力。
 
-属性介绍:
+- publish : 默认false，默认不生成页面不发布
+  属性介绍:
 
-- `draft: true`: 视为草稿。Quartz 不会发布；
-- `publish: false`: 也不会生成页面，Quartz 不会发布（新版 quartz 优先 draft）
+- `draft: true`: 视为草稿。不会生成页面，Quartz 不会发布；
+
+- `publish: false`: 不会生成页面，Quartz 不会发布（新版 quartz 优先 draft）
 
 ### ② 你想要的：批量自动往 md 头部补 --- frontmatter（解决一个个写麻烦）
 

@@ -1,14 +1,13 @@
 ---
 publish: true
 title: batch-add-quartz-meta
-created: 2026-11-02
-modified: 2026-11-02T15:53:46.880Z
+created: 2026-11-04
+modified: 2026-11-04
 ---
 
 ```
 <%*
 // ========== 配置区，你改这里 ==========
-//const targetFolder = ""; // 要处理的子文件夹名称，留空处理所有
 const fixedTags = []; // 统一追加的tags，[]就是不加
 const override = false; // false=只补缺失、不覆盖已有值；true=强制覆盖
 // ======================================
@@ -35,11 +34,13 @@ for (const file of files) {
     }
     // updated：修改日期
     if (!fm.updated || override) {
-      fm.updated = new Date(file.stat.ctime).toISOString().split("T")[0];
+      fm.updated = new Date().toISOString().split("T")[0];
     }
     // tags：标签 不存在就赋值；存在则不改动（不会追加，如需追加我给你改版本）
     if ((!fm.tags || override)) {
       if(fixedTags.length > 0) {
+
+
         fm.tags = fixedTags;
       }else {
         fm.tags = [];

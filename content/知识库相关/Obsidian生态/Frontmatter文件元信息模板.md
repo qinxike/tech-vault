@@ -13,7 +13,7 @@ modified: 2026-11-02T17:29:31.713Z
   批量给存量笔记补 `date、tags、draft:false` 示例 Templater 模板：
 - **Metadata Menu**：设置模板，一键给选中笔记插入 frontmatter 模板
 
-## 设置模板
+## 设置插件模板
 
 ### Templater模板
 
