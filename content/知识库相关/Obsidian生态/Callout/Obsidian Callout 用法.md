@@ -6,22 +6,19 @@ modified: 2026-11-03
 draft: false
 publish: true
 ---
-
 # Obsidian Callout 用法（Quartz 也原生支持）
 
-> [!TIP] Callout小技巧
+> [!TIP] Callout小技巧 
 > Callout 是 Obsidian 的扩展语法，属于块提示框，**GFM 原生不支持，但 Quartz 内置解析**，你现在的工作流完全能用。
 
 ## 基础模板：
 
-> [!NOTE] 标题（可以省略）
-> 这里是内容
+> [!NOTE] 标题（可以省略） 
+> 这里是内容 
 > 多行也可以，每行前面加 >
 
 ## 内置类型（图标 + 配色）
-
-格式:
-
+格式: 
 ```
 > [!图标] 标题 
 > 内容
@@ -59,8 +56,7 @@ publish: true
 > [!WARNING]- 【风险提醒】批量脚本执行前务必备份库
 > 脚本会修改frontmatter，虽然脚本是只补字段不覆盖，但强烈建议先备份！
 
-> [!CAUTION] 注意：
->
+>[!CAUTION] 注意：
 > 1. `[!xxx]` 不能有空格，是固定语法；
 > 2. 嵌套：callout 里面还可以放列表、代码块、双链；
 > 3. 普通 GitHub 直接渲染会变成普通引用块，识别不出样式；**Quartz 没问题**。

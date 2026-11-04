@@ -8,7 +8,7 @@ draft: false
 publish: true
 ---
 
-# ✅ Quartz 第三方主题站点 + 推荐模板(适配 Quartz 5)
+# ✅ Quartz 第三方主题站点 + 推荐模板（适配 Quartz 5)
 
 ## 🔗 主题预览网站（优先看这个）https://quartz-themes.github.io/
 

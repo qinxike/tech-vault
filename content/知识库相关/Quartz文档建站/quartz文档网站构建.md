@@ -6,12 +6,10 @@ modified: 2026-11-04
 draft: false
 publish: true
 ---
-
-# [quartz介绍](https://github.com/Muliminty/Muliminty-Note/blob/master/07-%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E4%B8%8E%E8%BF%90%E7%BB%B4/05-%E9%9D%99%E6%8    0%81%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/Quartz%20%E5%AE%9A%E5%88%B6%E6%95%99%E7%A8%8B.md)
+## [quartz介绍](https://github.com/Muliminty/Muliminty-Note/blob/master/07-%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E4%B8%8E%E8%BF%90%E7%BB%B4/05-%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/Quartz%20%E5%AE%9A%E5%88%B6%E6%95%99%E7%A8%8B.md)
 
 ## 目录结构
-
-```
+ ```
 项目根目录/
 ├── .github/
 │   └── workflows/
@@ -27,7 +25,7 @@ publish: true
 ├── package.json                # 项目依赖
 ├── .gitignore                  # Git 忽略文件
 └── README.md                   # 项目说明
-```
+ ```
 
 # 完整标准流程串一遍（适配你现在的工作流）
 
@@ -52,9 +50,7 @@ git remote add origin https://github.com/qinxike/tech-vault-site.git
 ```
 
 - (可选)本地克隆官方模板之后，保留官方上游（upstream）
-
 > 把官方quartz模板存为名叫 upstream 的远程，用于后续更新
-
 ```
 git remote add upstream https://github.com/jackyzha0/quartz.git
 # 以后想要升级 Quartz版本
@@ -70,10 +66,8 @@ pnpm install
 
 5. 配置 quartz.config.ts、准备同步脚本、rsync 把真正的笔记同步进 `content`目录
 6. 本地预览：
-
-   `npx quartz build --serve`
-   `pnpm exec quartz build --serve`
-
+       `npx quartz build --serve`
+       `pnpm exec quartz build --serve`
 7. 确认没问题，提交推送到**你自己的仓库**
 
 ```
