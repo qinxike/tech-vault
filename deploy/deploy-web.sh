@@ -11,7 +11,7 @@ npx quartz build
 # 2.同步到服务器目录
 #scp ./content/* qinxike@macmini-web:/Users/qinxike/works/deploy/tech-vault-site/
 # 旧版不支持参数: --iconv=UTF8-MAC,UTF-8
-rsync -av --delete \
+rsync -a --delete \
 --exclude ".git/" \
 --exclude ".obsidian/" \
 --exclude ".trash/" \
