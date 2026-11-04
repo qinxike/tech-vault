@@ -1,8 +1,11 @@
 ---
-publish: true
 title: batch-add-quartz-meta
+description: ""
+tags: []
 created: 2026-11-04
 modified: 2026-11-04
+draft: false
+publish: true
 ---
 
 ```
@@ -34,7 +37,11 @@ for (const file of files) {
     }
     // updated：修改日期
     if (!fm.updated || override) {
+<<<<<<< HEAD:content/_templater/scripts/batch-add-quartz-meta.md
       fm.updated = new Date().toLocaleString().replaceAll('/', '-')
+=======
+      fm.updated = new Date().toISOString().split("T")[0];
+>>>>>>> 4a3bba1 (修改文件夹名称，以便兼容quartz识别文件夹展现):content/知识库相关/Obsidian生态/Templater/scripts/batch-add-quartz-meta.md
     }
     // tags：标签 不存在就赋值；存在则不改动（不会追加，如需追加我给你改版本）
     if ((!fm.tags || override)) {
