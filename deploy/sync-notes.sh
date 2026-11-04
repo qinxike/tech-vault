@@ -1,10 +1,13 @@
 #!/bin/zsh
 
+cd ~/works/quartz-sites/tech-vault-site/
+
 # 过滤所有.开头的文件, .开头的文件夹
 SRC="/Users/qinxike/works/knowledge-vault/tech-vault"
 DEST="./content"
 rsync -av --delete \
 	--exclude "_templater/" \
+	--exclude "私密文件夹/" \
 	--exclude ".git/" \
 	--exclude ".gitignore" \
 	--exclude ".obsidian/" \
