@@ -1,14 +1,14 @@
 ---
-publish: true
 title: Obsidian Quartz Syncer 安装与配置指南
 description: 从零把 Obsidian 笔记发布成 Quartz 静态网站的完整步骤（GitHub 版）
-created: 2026-11-01
-modified: 2026-11-02T17:57:42.488Z
 tags:
   - obsidian
   - quartz
   - 建站
   - 发布
+created: 2026-11-01
+modified: 2026-11-02T17:57:42.488Z
+publish: true
 ---
 
 # Obsidian Quartz Syncer 安装与配置指南
