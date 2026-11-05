@@ -102,9 +102,10 @@ plugins:
   - source: "@quartz-themes/core"
     enabled: true
     options:
-      theme: "emerald"
-      variation: "latte" # mocha深色，latte浅色
-      fontOrigin: "local"
+      theme: emerald
+      variation: "latte" 
+      # mocha深色，latte浅色
+      fontOrigin: local
       mode: both
   - source: "@quartz-community/remove-draft"
     enabled: true
@@ -208,7 +209,7 @@ plugins:
         Discord Community: https://discord.gg/cRFFHYye7t
     layout:
       position: footer
-      priority: 50
+      priority: 30
   - source: "@quartz-community/recent-notes"
     enabled: false
   - source: "@quartz-community/spacer"

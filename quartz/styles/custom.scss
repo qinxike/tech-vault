@@ -1,7 +1,13 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+//隐藏关系图图表
 div.graph {
   display: none;
 }
 
+//目录树折叠时高度不够需要高度
+div.toc {
+  min-height: 3rem;
+}
