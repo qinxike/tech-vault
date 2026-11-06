@@ -8,6 +8,11 @@ body hr {
   margin-bottom: 5px;
 }
 
+//折叠中文高度不够
+.explorer.collapsed {
+  flex: 0 1.5rem
+}
+
 //隐藏关系图图表
 div.graph {
   display: none;

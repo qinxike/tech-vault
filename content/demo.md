@@ -1,8 +1,8 @@
 ---
+publish: true
 title: demo
 created: 2026-11-03
 modified: 2026-11-03
-publish: true
 ---
 # demo doc
 
