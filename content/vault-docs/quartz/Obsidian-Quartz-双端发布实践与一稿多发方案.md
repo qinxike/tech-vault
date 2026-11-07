@@ -10,13 +10,15 @@ tags:
   - AI写作
 created: 2026-11-05
 ---
-
 # Obsidian + Quartz + rsync：本地双端发布的博客工作流
 
 > 一句话概括：**Obsidian 里写 markdown，一条脚本同时发布到「GitHub Pages」和「本地服务器」两个端**，再配合 AI 完成「抓热点 → 写稿 → 多平台分发」。
 > 本文分两部分：① 建站与双端发布实践；② 一稿多发 + AI 内容生产方案。
 
 ---
+**双端博客地址**:  
+本地博客: https://www.simpluv.top/tech-vault-site/  
+github: https://qinxike.github.io/tech-vault-site/
 
 ## 第一部分：建站与双端发布实践
 
@@ -86,7 +88,7 @@ Templater 模板示例（存为 `templates/post.md`）：
 title: <% tp.file.title %>
 description:
 tags: []
-date: <% tp.date.now("YYYY-MM-DD") %>
+created: <% tp.date.now("YYYY-MM-DDTHH:mm:ss+08:00") %>
 publish: true
 ---
 ```
@@ -101,7 +103,7 @@ npm ci
 
 # 把 origin 指向自己的 GitHub 仓库
 git remote set-url origin git@github.com:你的用户名/tech-vault-site.git
-git push -u origin v4        # v4 模板推 v4 分支；v5 模板推 v5 分支
+git push -u origin v5        # v5 模板推 v5 分支
 ```
 
 然后在 Quartz Syncer 插件设置里同时填：**本地仓库路径**（`~/works/quartz-sites/tech-vault-site`）和**远程仓库地址**。⚠️ 本地仓库务必放在 Obsidian 库外面。
@@ -114,16 +116,26 @@ git push -u origin v4        # v4 模板推 v4 分支；v5 模板推 v5 分支
 #!/usr/bin/env bash
 set -euo pipefail
 
+cd ~/works/quartz-sites/tech-vault-site/
+SRC="/Users/qinxike/works/knowledge-vault/tech-vault"
+DEST="./content"
+
 rsync -a --delete \
-  --exclude ".git/" \
-  --exclude ".obsidian/" \
-  --exclude ".trash/" \
-  --exclude ".DS_Store" \
-  /Users/qinxike/works/knowledge-vault/tech-vault/ \
-  /Users/qinxike/works/quartz-sites/tech-vault-site/content/
+    --exclude "_templater/" \
+    --exclude "private/" \
+    --exclude "raw-news/" \
+    --exclude ".workbuddy/" \
+    --exclude ".git/" \
+    --exclude ".gitignore" \
+    --exclude ".obsidian/" \
+    --exclude ".trash/" \
+    --exclude ".DS_Store" \
+    --exclude ".*/" \
+    --exclude ".*" \
+    $SRC/ $DEST/
 ```
 
-> 注：旧版 rsync 不支持 `--iconv=UTF8-MAC,UTF-8`，macOS 自带 rsync 默认就是 UTF-8 NFD，同名文件同名转换，实践中不需要加。
+> 注：旧版 rsync 不支持 `--iconv=UTF8-MAC,UTF-8`
 
 #### Step 5-6：构建 + 部署到本地服务器
 
@@ -140,17 +152,33 @@ rsync -a --delete ./public/ qinxike@macmini-web:/Users/qinxike/works/deploy/tech
 
 ```nginx
 server {
-    listen 80;
-    server_name notes.example.com;          # 域名已通过 frp 指向本机
-    root /Users/qinxike/works/deploy/tech-vault-site;
-    index index.html;
 
+    listen 443 ssl default_server;
+    server_name simpluv.top www.simpluv.top;
+    
+    ssl_certificate     /opt/homebrew/etc/nginx/ssl/simpluv/fullchain.cer;
+    ssl_certificate_key /opt/homebrew/etc/nginx/ssl/simpluv/private.key;
+    ssl_protocols       TLSv1.2 TLSv1.3;
+    ssl_ciphers         HIGH:!aNULL:!MD5;
+    ssl_session_cache   shared:SSL:10m;
+    
+    client_max_body_size 60m;
     gzip on;
     gzip_types text/css application/javascript image/svg+xml;
-    location ~* \.(js|css|png|jpg|webp|svg|woff2)$ {
-        expires 7d;
+    
+    location ^~ /tech-vault-site {
+        alias /Users/qinxike/works/deploy/tech-vault-site/;
+        index index.html;
+        # 干净url：先找真实路径；不存在则尝试追加.html；最后再试目录index
+        try_files $uri $uri.html $uri/ =404;
     }
+    
+    location /tech-docs {
+     return 302 /tech-vault-site;
+    }
+
 }
+
 ```
 
 #### Step 9：一键部署脚本 + crontab

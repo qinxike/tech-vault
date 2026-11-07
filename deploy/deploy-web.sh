@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-# 构建并部署到指定目录, crontab定期执行 #
+# 构建并部署到指定目录 #
+# 定时crontab + 手动双模式
+
+# 任何一步失败立即中止，避免"构建失败但旧产物被 rsync --delete 清掉"
 set -euo pipefail
 
 SITE_DIR="/Users/qinxike/works/quartz-sites/tech-vault-site"
@@ -44,5 +47,6 @@ git pull --rebase --autostash
 git push
 
 echo "==== 部署完成 ===="
+# osascript通知; 后续可用Server 将/bark 推送到微信?
 osascript -e 'display notification "tech-vault-site 部署完成" with title "Deploy"' 2>/dev/null || true
 
